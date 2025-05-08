@@ -48,6 +48,7 @@ from django.views import generic
 
 class AuthorListView(generic.ListView):
     model = Author
+    paginate_by = 10
     context_object_name = 'author_list'  # optional but more explicit
     template_name = 'catalog/author_list.html'  # must match what you create
 

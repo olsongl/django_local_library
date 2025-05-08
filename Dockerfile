@@ -10,7 +10,7 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 
 COPY . .
 
-RUN chmod +x /app/launch.sh
+# Run migrations and collect static during the image build
+RUN python manage.py migrate && python manage.py collectstatic --noinput
 
-ENTRYPOINT ["/app/launch.sh"]
-CMD []
+CMD ["gunicorn", "locallibrary.wsgi:application", "--bind", "0.0.0.0:8080"]

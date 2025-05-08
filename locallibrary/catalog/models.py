@@ -52,6 +52,10 @@ class Book(models.Model):
     # Genre class has already been defined so we can specify the object above.
     genre = models.ManyToManyField(
         Genre, help_text="Select a genre for this book")
+    
+    def get_absolute_url(self):
+        """Returns the URL to access a detail record for this book."""
+        return reverse('book-detail', args=[str(self.id)])
 
     def __str__(self):
         """String for representing the Model object."""
@@ -63,9 +67,6 @@ class Book(models.Model):
         display_genre.short_description = 'Genre'
 
 
-    def get_absolute_url(self):
-        """Returns the URL to access a detail record for this book."""
-        return reverse('book-detail', args=[str(self.id)])
     
     
 

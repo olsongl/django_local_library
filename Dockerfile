@@ -10,9 +10,7 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 
 COPY . .
 
-# Make sure entrypoint.sh is executable
-RUN chmod +x /app/entrypoint.sh
+RUN chmod +x /app/launch.sh
 
-# Use it as both ENTRYPOINT and CMD
-ENTRYPOINT ["/app/entrypoint.sh"]
+ENTRYPOINT ["/app/launch.sh"]
 CMD []

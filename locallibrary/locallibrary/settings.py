@@ -26,7 +26,7 @@ SECRET_KEY = SECRET_KEY = os.environ.get('SECRET_KEY', 'fallback-insecure-dev-ke
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.onrender.com', 'gav347sololibrary.duckdns.org', 'djangolocallibrary-production-8002.up.railway.app']
+ALLOWED_HOSTS = ['.onrender.com', 'gav347sololibrary.duckdns.org', "djangolocallibrary-production-8002.up.railway.app"]
 
 
 

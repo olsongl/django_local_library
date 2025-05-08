@@ -40,3 +40,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+from django.urls import include  # if not already imported
+
+urlpatterns += [
+    path('accounts/', include('django.contrib.auth.urls')),
+]
+
